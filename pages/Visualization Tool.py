@@ -67,12 +67,13 @@ val_max = country_df.groupby('Country/Region')['Estimated Value'].mean().max()
 mean = float(global_df.groupby('Indicator')['Estimated Value'].mean())
 gender_rep = gen_df.groupby('Sex')['Estimated Value'].mean().reset_index()
 
+val_max = str(round(val_max)) + " (" + str(round(100*val_max/mean,1)) +"%)" if indicator in number_ind else str(round(val_max,2)) + " (x" + str(round(val_max/mean,1)) +")"  
 mean = round(mean) if indicator in number_ind else round(mean,2)
-val_max = round(val_max) if indicator in number_ind else round(val_max,2)
+
 
 with fcol1: 
     st.markdown('<br><br><br>', unsafe_allow_html=True)
-    st.metric("Today in the world",mean)
+    st.metric("Today's youth",mean)
 with fcol2:
     st.markdown('<br><br><br>', unsafe_allow_html=True)
     st.metric("Most affected country",country_max ,val_max,delta_color="off")
