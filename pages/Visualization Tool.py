@@ -168,10 +168,11 @@ chart, map, table = st.tabs(["📈 Chart", "🗺️ Map", "📊 Table"])
 # Dynamic titles definition (chosen gender and countries)
 g = "" if both or both2 else gender[0]
 c = "" if (len(country)==1 and country[0]=='Global') or (len(country)==0) else "in "+ ", ".join(country)
-chart_title = "Evolution of the "+indicator+" in the "+g+" population between the ages "+age+" over the years "+str(start_year)+" to "+str(end_year) +" "+ c
+a = "between the ages "+"-".join(re.findall(r'\d+', age)) if not any_age else "between the ages 0-19"
+chart_title = "Evolution of the "+indicator+" in the "+g+" population "+a+" over the years "+str(start_year)+" to "+str(end_year) +" "+ c
 chart_title = "<br>".join(wrap(chart_title, 90))
-map_title = "Map of the "+indicator+" in the "+g+" population between the ages "+age+" over the years "+str(start_year)+" to "+str(end_year)
-table_title = "Data concerning the "+indicator+" in the "+g+" population between the ages "+age+" over the years "+str(start_year)+" to "+str(end_year) +" "+ c
+map_title = "Map of the "+indicator+" in the "+g+" population "+a+" over the years "+str(start_year)+" to "+str(end_year)
+table_title = "Data concerning the "+indicator+" in the "+g+" population "+a+" over the years "+str(start_year)+" to "+str(end_year) +" "+ c
 
 
 # CHART vizualisation
