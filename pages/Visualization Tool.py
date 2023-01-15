@@ -34,8 +34,9 @@ def get_steps(age_groups_by_ind): #returns the steps for the age slider
             steps.append(int(i))
         else:
             steps.append(int(i)+1)
+    steps = list(set(steps))
     steps.sort()
-    return set(steps)
+    return steps
 
 # Title 
 st.title("Visualization Tool")  
