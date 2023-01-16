@@ -15,5 +15,5 @@ The dataset is available on the UNICEF website: https://data.unicef.org/topic/hi
 Open a terminal prompt in the project folder, and run this line:
 
 ```
-streamlit run '.\Project Introduction.py'
+streamlit run '.\Project_Introduction.py'
 ```
