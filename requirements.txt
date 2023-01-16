@@ -2,7 +2,7 @@ Pillow
 streamlit
 pandas
 numpy
-re
+regex
 folium
 streamlit_folium.folium_static
 plotly.graph_objects
