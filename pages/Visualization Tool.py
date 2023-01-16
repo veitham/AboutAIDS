@@ -204,7 +204,7 @@ with map:
 
     df_map = df_map.groupby(['ISO3','Year'])[['Estimated Value','Lower Value','Upper Value']].mean().reset_index()
 
-    # Summarizes the data when a year range is selected
+    # Summarizes the data when a year range is selected (if the value is annual, does a sum, but does a mean if it's a rate)(this mean is not very useful/correct, but it's just for map vizualisation)
     if indicator in ["Estimated number of annual AIDS-related deaths","Estimated number of annual new HIV infections"]:
         df_map = (df_map.groupby("ISO3")["Estimated Value"].sum()).reset_index()
     else:
