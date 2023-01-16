@@ -205,10 +205,10 @@ with map:
     df_map = df_map.groupby(['ISO3','Year'])[['Estimated Value','Lower Value','Upper Value']].mean().reset_index()
 
     # Summarizes the data when a year range is selected
-    if indicator in ["Estimated incidence rate (new HIV infection per 1,000 uninfected population)", "Estimated mother-to-child transmission rate (%)","Estimated number of people living with HIV"]:
-        df_map = (df_map.groupby("ISO3")["Estimated Value"].mean()).reset_index()
-    else:
+    if indicator in ["Estimated number of annual AIDS-related deaths","Estimated number of annual new HIV infections"]:
         df_map = (df_map.groupby("ISO3")["Estimated Value"].sum()).reset_index()
+    else:
+        df_map = (df_map.groupby("ISO3")["Estimated Value"].mean()).reset_index()
         
     cho_map = folium.Choropleth(
         geo_data="data/countries.geojson",
