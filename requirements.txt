@@ -4,6 +4,5 @@ pandas
 numpy
 regex
 folium
-streamlit_folium.folium_static
-plotly.graph_objects
-plotly.express
+streamlit_folium
+plotly
