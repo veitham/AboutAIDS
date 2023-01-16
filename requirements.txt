@@ -1,8 +1,9 @@
+PIL
 streamlit
 pandas
-numpy 
+numpy
 re
-textwrap
 folium
-plotly
-PIL
+streamlit_folium.folium_static
+plotly.graph_objects
+plotly.express
