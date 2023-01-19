@@ -9,8 +9,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 import json
 
+df = st.session_state.df 
 # Import data   
-df = pd.read_csv("data/hiv.csv",sep=";")
 df["Estimated Value"] = df["Value"].apply(lambda x: x.replace(',','').replace('<','').replace('>','') if type(x)==str else x).astype(float)
 df["Upper Value"] = df["Upper"].apply(lambda x: x.replace(',','').replace('<','').replace('>','') if type(x)==str else x).astype(float)
 df["Lower Value"] = df["Lower"].apply(lambda x: x.replace(',','').replace('<','').replace('>','') if type(x)==str else x).astype(float)

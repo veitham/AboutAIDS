@@ -1,8 +1,18 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import requests
 
-df = pd.read_csv("data/hiv.csv",sep=";")
+@st.cache(allow_output_mutation=True,show_spinner=False)
+def download_data():
+    with st.spinner("Loading data..."):
+        url = "https://data.unicef.org/wp-content/uploads/2022/07/HIV_Epidemiology_Children_Adolescents_2022.xlsx"
+        xl = pd.ExcelFile(requests.get(url).content)
+        df = xl.parse('Data', skiprows=1)
+    return df
+
+st.session_state.df = download_data()
+df = st.session_state.df
 
 st.sidebar.title("About the project")
 st.sidebar.write("This is the introduction page of the project. To use the visualisation tool, use the navigation menu above.")
