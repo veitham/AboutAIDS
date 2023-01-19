@@ -1,5 +1,7 @@
 # AboutAIDS
 
+You can check out the app [here](https://veitham-aboutaids-project-introduction-rr8wmu.streamlit.app/) !
+
 ## Project Introduction
 According to the UNICEF, the HIV/AIDS pandemic is still a major public health issue, especially in the youth: Of the estimated 650,000 people who died of AIDS-related illnesses in 2021, 17% of them were children under 20 years of age.
 
@@ -11,8 +13,8 @@ To use the tool, simply select the indicator you want to visualize, and select t
 
 The dataset is available on the UNICEF website: https://data.unicef.org/topic/hiv-aids/
 
-## Launch
-Open a terminal prompt in the project folder, and run this line:
+## Local Launch
+To launch the app locally, open a terminal prompt in the project folder, and run this line:
 
 ```
 streamlit run '.\Project_Introduction.py'
